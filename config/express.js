@@ -2,10 +2,12 @@
 var express = require("express");
 
 module.exports = function (){
-
-    var app = express.app();
-
-    app.use(express.static('./aps_pi2/public'));
     
+    var app = express();
+    
+    app.set('port', 3000);
+    app.set('host', "127.0.0.1");
+    app.use(express.static('./public'));
+      
     return app;
 };
