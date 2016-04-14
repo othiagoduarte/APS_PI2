@@ -1,0 +1,21 @@
+{
+  "name": "Jorge LEite",
+  "description": "Aplicação criada para controle de tempo de trabalho utilizando a técnica Pomodor em uma aplicação web assincrona.",
+  "main": "server.js",
+  "authors": [
+    "Jorge LEite"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/jorgefernandodamasio/KeepFocusJS",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Materialize": "materialize#^0.97.6",
+    "jquery": "^2.2.3"
+  }
+}

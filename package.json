@@ -1,15 +1,30 @@
 {
-  "name": "aps_2",
+  "name": "jorge_leite",
   "version": "1.0.0",
-  "description": "",
+  "description": "Aplicação criada para controle de tempo de trabalho utilizando a técnica Pomodor em uma aplicação web assincrona.",
   "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "bower": "^1.7.9",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "express-load": "^1.1.15",
+    "method-override": "^2.3.5",
+    "nodemon": "^1.9.1"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node se\t",
     "start": "node server.js"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jorgefernandodamasio/KeepFocusJS.git"
+  },
+  "author": "Jorge Leite",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.13.4"
-  }
+  "bugs": {
+    "url": "https://github.com/jorgefernandodamasio/KeepFocusJS/issues"
+  },
+  "homepage": "https://github.com/jorgefernandodamasio/KeepFocusJS#readme"
 }
