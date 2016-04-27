@@ -1,7 +1,7 @@
 {
-  "name": "jorge_leite",
+  "name": "Thiagod",
   "version": "1.0.0",
-  "description": "Aplicação criada para controle de tempo de trabalho utilizando a técnica Pomodor em uma aplicação web assincrona.",
+  "description": "Aplicação criada para o controle financeiro pessoal.",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.15.0",
@@ -19,12 +19,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jorgefernandodamasio/KeepFocusJS.git"
+    "url": "git+https://github.com/othiagoduarte/aps_pi2.git"
   },
-  "author": "Jorge Leite",
+  "author": "Thiago Duarte",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jorgefernandodamasio/KeepFocusJS/issues"
+    "url": "https://github.com/othiagoduarte/aps_pi2/issues"
   },
-  "homepage": "https://github.com/jorgefernandodamasio/KeepFocusJS#readme"
+  "homepage": "https://github.com/othiagoduarte/aps_pi2#readme"
 }

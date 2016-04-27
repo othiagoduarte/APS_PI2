@@ -1,7 +1,7 @@
 module.exports = function()
 {
     var controller = {};
-    
+        
     controller.index = function(req,res)
     {
         res.render('home',{nome:'Express'});
@@ -9,7 +9,7 @@ module.exports = function()
     
     controller.home = function(req,res)
     {
-        res.render('home',{nome:'Express'});
+        res.render('home',{nome:'Express',dados:dados});
     }
     
     controller.localizacao = function(req,res)
