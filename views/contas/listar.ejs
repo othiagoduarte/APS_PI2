@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    
+<head>
+    <head>
+        <% include ../includes/head %>
+    </head>
+</head>
+
+<body>
+    <div class= "Container">
+        <% include ../includes/header %> 
+		<div>
+		<h4>Listar todas as contas</h4>	
+		      <table class="striped">
+        <thead>
+          <tr>
+              <th data-field="id">Conta</th>
+              <th data-field="name">Categoria</th>
+              <th data-field="name">Data de vencimento</th>
+              <th data-field="price">Valor</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Alvin</td>
+            <td>Eclair</td>
+            <td>Eclair</td>
+            <td>$0.87</td>
+          </tr>
+          <tr>
+            <td>Alan</td>
+            <td>Eclair</td>
+            <td>Jellybean</td>
+            <td>$3.76</td>
+          </tr>
+          <tr>
+            <td>Jonathan</td>
+            <td>Eclair</td>
+            <td>Lollipop</td>
+            <td>$7.00</td>
+          </tr>
+        </tbody>
+      </table>
+        </div>
+        <% include ../includes/footer %>
+    </div> 
+    <script type="text/javascript" src="http://127.0.0.1:3000/js/initial.js"></script>
+</body>    
+</html>

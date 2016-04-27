@@ -1,21 +1,23 @@
 {
-  "name": "Thiagod",
-  "description": "Aplicação criada para controle de tempo de trabalho utilizando a técnica Pomodor em uma aplicação web assincrona.",
+  "name": "noexcell",
+  "description": "Aplicação para controle financeiro.",
   "main": "server.js",
   "authors": [
-    "Jorge LEite"
+    "Thiago Duarte"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/jorgefernandodamasio/KeepFocusJS",
+  "homepage": "https://github.com/othiagoduarte/aps_pi2.git",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "/public/bowerModules"
   ],
   "dependencies": {
-    "Materialize": "materialize#^0.97.6",
+    "materialize": "^0.97.6",
     "jquery": "^2.2.3"
-  }
+  },
+  "private": true
 }

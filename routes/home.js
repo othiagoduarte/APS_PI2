@@ -1,5 +1,3 @@
-
-
 module.exports =function(app){
 
 	var controller = app.controllers.home;
@@ -7,5 +5,4 @@ module.exports =function(app){
     app.get('/',controller.index);
     app.get('/home',controller.index);
     app.get('/index',controller.index);
-    app.get('/localizacao',controller.localizacao);
 }
