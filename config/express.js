@@ -8,9 +8,9 @@ module.exports = function()
 {
 	var app = express();
 	
-	app.set('port',3000);
-	//app.set('port',process.env.PORT);
-	//app.set('host',process.env.IP);
+	//app.set('port',3000);
+	app.set('port',process.env.PORT);
+	app.set('host',process.env.IP);
 	
 	app.use(express.static('./public'));
 	

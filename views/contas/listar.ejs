@@ -4,48 +4,43 @@
 <head>
     <head>
         <% include ../includes/head %>
+        <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+        <script type="text/javascript" src="/controller/app.js"></script>
+        <script type="text/javascript" src="/controller/contas/listarcontoller.js"></script>
     </head>
 </head>
 
-<body>
+<body ng-app = "noexcell">
     <div class= "Container">
         <% include ../includes/header %> 
 		<div>
 		<h4>Listar todas as contas</h4>	
-		      <table class="striped">
-        <thead>
-          <tr>
-              <th data-field="id">Conta</th>
-              <th data-field="name">Categoria</th>
-              <th data-field="name">Data de vencimento</th>
-              <th data-field="price">Valor</th>
-          </tr>
-        </thead>
+		<div ng-controller = "listarController">
+  		<table class="striped">
+          <thead>
+            <tr>
+                <th data-field="id">Conta</th>
+                <th data-field="name">Categoria</th>
+                <th data-field="name">Data de vencimento</th>
+                <th data-field="price">Valor</th>
+            </tr>
+          </thead>
+  
+          <tbody>
+            
+            <tr ng-repeat= "conta in contas">
+              <td>{{conta.nome}}</td>
+              <td>{{conta.categoria}}</td>
+              <td>{{conta.data}}</td>
+              <td>{{conta.pago}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
+<% include ../includes/footer %>
 
-        <tbody>
-          <tr>
-            <td>Alvin</td>
-            <td>Eclair</td>
-            <td>Eclair</td>
-            <td>$0.87</td>
-          </tr>
-          <tr>
-            <td>Alan</td>
-            <td>Eclair</td>
-            <td>Jellybean</td>
-            <td>$3.76</td>
-          </tr>
-          <tr>
-            <td>Jonathan</td>
-            <td>Eclair</td>
-            <td>Lollipop</td>
-            <td>$7.00</td>
-          </tr>
-        </tbody>
-      </table>
-        </div>
-        <% include ../includes/footer %>
-    </div> 
-    <script type="text/javascript" src="http://127.0.0.1:3000/js/initial.js"></script>
+</div> 
+    <script type="text/javascript" src="/js/initial.js"></script>
 </body>    
 </html>
