@@ -14,8 +14,10 @@
     <div class= "Container">
         <% include ../includes/header %> 
 		<div>
-		<h4>Listar todas as contas</h4>	
+	
 		<div ng-controller = "listarController">
+
+          	<h4>Listar todas as contas</h4>	
   		<table class="striped">
           <thead>
             <tr>
@@ -28,7 +30,7 @@
   
           <tbody>
             
-            <tr ng-repeat= "conta in contas">
+            <tr ng-repeat= "conta in contas |  orderBy:'data'">
               <td>{{conta.nome}}</td>
               <td>{{conta.categoria}}</td>
               <td>{{conta.data}}</td>
@@ -36,8 +38,7 @@
             </tr>
           </tbody>
         </table>
-      </div>
-  </div>
+    </div>
 <% include ../includes/footer %>
 
 </div> 

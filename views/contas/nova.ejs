@@ -4,6 +4,7 @@
 <head>
     <head>
         <% include ../includes/head %>
+        <script type="text/javascript" src="/controller/contas/listarcontoller.js"></script>
     </head>
 </head>
 
@@ -30,25 +31,25 @@
                        </div>
                     
                 </div>
-                <div class="row">
+                <div class="row" ng-app = "noexcell" ng-controller = "listarControle">
                  
                     <div class="input-field col s4">
-                        <input   placeholder="Digite o descricao" id="resposta2" length="100" type="text" class="validate" required name ="resposta2" value="">
+                        <input   placeholder="Digite o descricao" length="100" type="text" class="validate" required value="{{conta.descricao}}">
                         <label for="resposta2">Descricao</label>
                     </div>
                  
                     <div class="col s3">
                         <label for="resposta2">Vencimento</label>
-                        <input type="date" class="datepicker">  
+                        <input type="date" class="datepicker" value = {{conta.vencimento}}>  
                     </div>
                     <div class="col s3">
                         <label for="resposta2">Pagamento</label>
-                        <input type="date" class="datepicker">  
+                        <input type="date" class="datepicker" value = {{conta.pagamento}} >  
                     </div>
                     <div class="col s2">
                         <br>
                         <p>
-                            <input type="checkbox" id="test5" />
+                            <input type="checkbox" id="test5"value = {{conta.pago}} />
                             <label for="test5">Pago</label>
                         </p>                    
                      </div>
@@ -68,7 +69,7 @@
                   </div>                      
             </div>	
         <% include ../includes/footer %>
-        listarcontoller.js
+     
     </div> 
 </body>    
 </html>
