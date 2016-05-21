@@ -6,16 +6,16 @@
         <% include ../includes/head %>
         <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
         <script type="text/javascript" src="/controller/app.js"></script>
-        <script type="text/javascript" src="/controller/contas/listarcontoller.js"></script>
+        <script type="text/javascript" src="/controller/contas/listarcontroller.js"></script>
     </head>
 </head>
 
 <body ng-app = "noexcell">
-    <div class= "Container">
+    <div class= "Container-fluid">
         <% include ../includes/header %> 
 		<div>
 	
-		<div ng-controller = "listarController">
+		<div ng-controller = "listarcontroller">
 
           	<h4>Listar todas as contas</h4>	
   		<table class="striped">
@@ -30,11 +30,11 @@
   
           <tbody>
             
-            <tr ng-repeat= "conta in contas |  orderBy:'data'">
+            <tr ng-repeat= "conta in contas " max-size="10">
               <td>{{conta.nome}}</td>
               <td>{{conta.categoria}}</td>
-              <td>{{conta.data}}</td>
-              <td>{{conta.pago}}</td>
+              <td>{{conta.datavencimento}}</td>
+              <td>{{conta.valor}}</td>
             </tr>
           </tbody>
         </table>
