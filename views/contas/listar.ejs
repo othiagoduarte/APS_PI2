@@ -9,7 +9,6 @@
         <script type="text/javascript" src="/controller/contas/listarcontroller.js"></script>
     </head>
 </head>
-
 <body ng-app = "noexcell">
     <div class= "Container-fluid">
         <% include ../includes/header %> 
@@ -23,24 +22,33 @@
             <tr>
                 <th data-field="id">Conta</th>
                 <th data-field="name">Categoria</th>
-                <th data-field="name">Data de vencimento</th>
-                <th data-field="price">Valor</th>
+                <th data-field="name">vencimento</th>
+                <th data-field="name">Pagamento</th>
+                <th data-field="name">Pago</th>
+               <th data-field="price">Valor</th>
             </tr>
-          </thead>
-  
-          <tbody>
-            
+          </thead>  
+          <tbody>            
             <tr ng-repeat= "conta in contas " max-size="10">
               <td>{{conta.nome}}</td>
-              <td>{{conta.categoria}}</td>
+              <td>{{conta.categoria.nome}}</td>
               <td>{{conta.datavencimento}}</td>
+              <td>{{conta.datapagamento}}</td>
+              <td>{{conta.pago}}</td>
               <td>{{conta.valor}}</td>
-            </tr>
+             </tr>
           </tbody>
         </table>
+          <!-- Modal Structure -->
+        <div id="novaconta" class="modal">
+            <div class="modal-content">
+            <% include ../contas/nova %> 
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>  
     </div>
 <% include ../includes/footer %>
-
 </div> 
     <script type="text/javascript" src="/js/initial.js"></script>
 </body>    

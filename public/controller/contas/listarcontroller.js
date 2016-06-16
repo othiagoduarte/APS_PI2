@@ -17,7 +17,8 @@ var firebase_atualizar_lista_contas = function(escopo){
         
         escopo.contas =snapshot.val();
        // escopo.contas.splice(0,1)
-	    escopo.$apply();
+	    console.log(escopo.contas);
+        escopo.$apply();
           
 	});
 	

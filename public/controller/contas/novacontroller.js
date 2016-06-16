@@ -1,30 +1,66 @@
 angular.module('noexcell')
 
-.controller('novacontroller', function($scope, $http, $log) 
-{	
-	$log.info("acessando novaController");
+.controller('novacontroller', function($scope,  $log) 
+{		
+    //Propriedades
+    $scope.novaConta = novaContaLimparDados();
+    $scope.categorias = listarCategorias();
     
-    $scope.categorias = [] 
-    $scope.selected ="1"
-	
-	  $scope.salvar = salvar;
-	  $scope.cancelar = cancelar;
-    
-    $scope.atualizarCategoria = firebase_atualizar_lista_categorias;
+    //Functions
+    $scope.salvar = salvar;
+	$scope.cancelar = cancelar;  
+      
+    $log.info("acessando novaController");
     
 });
-var salvar = function($scope){
-	    
-    var fireBaseNoexcell = new Firebase("https://noexcell.firebaseio.com//contas");
-    var newMessageRef = fireBaseNoexcell.push();
+
+var salvar = function(){
+	
+    $scope = this;
     
-    newMessageRef.set({ nome: "TESTE" , categoria: "1" ,datavencimento: "01/01/2016" ,pago:"s"});
+    console.log($scope.novaConta);
     
-    
-    console.log("salvar");
-	    
+    if ($scope.novaConta != null) {
+        
+        var fireBaseNoexcell = new Firebase("https://noexcell.firebaseio.com//contas");
+        var newMessageRef = fireBaseNoexcell.push();
+
+        newMessageRef.set($scope.novaConta); 
+        console.log("Conta cadastrada com sucesso");      
+        $scope.novaConta = novaContaLimparDados();
+    }
 };
 
-var cancelar =  function($scope){
-	    console.log("cancelar");
+var cancelar =  function(){
+    
+    $scope = this;
+    
+    console.log($scope.novaConta);
+    
+    $('#novaconta').closeModal();
+};
+
+var novaContaLimparDados = function(){
+    return {   nome:"Conta"
+             , categoria : { id:0,nome:"Categoria"} 
+             , valor : 999
+             , datapagamento : "01/01/2000"
+             , datavencimento : "01/01/2000"
+             , pago : false    
+          };
+}
+
+var cancelarFB =  function($scope){
+	    console.log("cancelar Firebase");
+};
+
+var listarCategorias = function(){
+  
+  return [   {id:1,nome:"Moradia"}
+            ,{id:2,nome:"Transporte"}
+            ,{id:3,nome:"Educação"}
+            ,{id:4,nome:"Compras"}
+            ,{id:5,nome:"Despesas"}
+            ,{id:6,nome:"Cartão de crédito"}
+        ];
 };
