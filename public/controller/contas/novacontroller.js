@@ -2,11 +2,9 @@ angular.module('noexcell')
 
 .controller('novacontroller', function($scope,  $log) 
 {		
-    //Propriedades
-    $scope.novaConta = novaContaLimparDados();
+    $scope.novaConta = null;
     $scope.categorias = listarCategorias();
     
-    //Functions
     $scope.salvar = salvar;
 	$scope.cancelar = cancelar;  
       
@@ -24,34 +22,23 @@ var salvar = function(){
         
         var fireBaseNoexcell = new Firebase("https://noexcell.firebaseio.com//contas");
         var newMessageRef = fireBaseNoexcell.push();
-
-        newMessageRef.set($scope.novaConta); 
-        console.log("Conta cadastrada com sucesso");      
-        $scope.novaConta = novaContaLimparDados();
+        var conta = {
+            nome : $scope.novaConta.nome,
+            valor : $scope.novaConta.valor,
+            categoria :{ id: $scope.novaConta.categoria.id, nome: $scope.novaConta.categoria.nome },
+            vencimento :$scope.novaConta.vencimento.getTime()
+        }
+        
+        newMessageRef.set(conta); 
+        cancelar();
     }
 };
 
 var cancelar =  function(){
     
     $scope = this;
-    
-    console.log($scope.novaConta);
-    
+    $scope.novaConta = null ;
     $('#novaconta').closeModal();
-};
-
-var novaContaLimparDados = function(){
-    return {   nome:"Conta"
-             , categoria : { id:0,nome:"Categoria"} 
-             , valor : 999
-             , datapagamento : "01/01/2000"
-             , datavencimento : "01/01/2000"
-             , pago : false    
-          };
-}
-
-var cancelarFB =  function($scope){
-	    console.log("cancelar Firebase");
 };
 
 var listarCategorias = function(){

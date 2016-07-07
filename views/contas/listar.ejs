@@ -15,8 +15,8 @@
 		<div>
 	
 		<div ng-controller = "listarcontroller">
-
-          	<h4>Listar todas as contas</h4>	
+        <h4>Valor total: {{total}}</h4>
+        <h4>Valor em Aberto: {{total}}</h4>	
   		<table class="striped">
           <thead>
             <tr>
@@ -24,18 +24,19 @@
                 <th data-field="name">Categoria</th>
                 <th data-field="name">vencimento</th>
                 <th data-field="name">Pagamento</th>
-                <th data-field="name">Pago</th>
                <th data-field="price">Valor</th>
+                <th data-field="name">Pago</th>               
             </tr>
           </thead>  
           <tbody>            
             <tr ng-repeat= "conta in contas " max-size="10">
               <td>{{conta.nome}}</td>
               <td>{{conta.categoria.nome}}</td>
-              <td>{{conta.datavencimento}}</td>
-              <td>{{conta.datapagamento}}</td>
-              <td>{{conta.pago}}</td>
+              <td>{{conta.vencimento | date : 'dd/MM/yyyy'}}</td>
+              <td>{{conta.pagamento}}</td>
               <td>{{conta.valor}}</td>
+              <td> <input type="checkbox" id="test5" checked={{conta.pago}}/></td>
+              
              </tr>
           </tbody>
         </table>

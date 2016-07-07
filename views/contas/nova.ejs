@@ -11,7 +11,7 @@
                         <label>Nome da Conta</label>
                     </div>
                      <div class="input-field col s6">
-                        <select ng-model="novaConta.categoria.nome" ng-options="item as categoria.nome for categoria in categorias track by categoria.id"></select>
+                        <select ng-model="novaConta.categoria" ng-options="categoria.nome for categoria in categorias track by categoria.id"></select>
                         <label>Selecione a categoria</label>
                     </div>
                 </div>
@@ -21,11 +21,9 @@
                         <label>Valor</label>
                     </div>
                     <div class="input-field col s3">
-                      <input type="date" ng-model="novaConta.dataPagamento" placeholder="yyyy-MM-dd" min="2013-01-01" max="2013-12-31" required />
+                      <input type="date" ng-model="novaConta.vencimento" placeholder="yyyy-MM-dd"  required />
                     </div>
-                    <div class="input-field col s3">
-                        <input   placeholder="Pagamento" length="100" type="date" class="validate" required/>
-                    </div>
+                 
                  </div>
                   <div class="row">
                     <div class ="offset-s6 col s6">
@@ -38,4 +36,5 @@
                     </div>
                   </div>                      
             </div>	
+            <p>{{selected}}</p>
         </div> 
